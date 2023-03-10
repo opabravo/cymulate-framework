@@ -28,7 +28,7 @@ class WindowsModule(BaseModule):
                     failed_dependency.append(dependency.description)
                 else:
                     self.logger.success(f'Passed this check: {dependency.description}')
-        return len(failed_dependency) == 0
+        return not failed_dependency
 
     @staticmethod
     def resolve_file_path(variable: str) -> str:
