@@ -38,8 +38,9 @@ class BaseModule:
         execution_file = Path(__file__).parent.parent / 'assets/executions.json'
         with open(execution_file, 'r', encoding='utf-8') as f:
             execution_data = json.load(f)
-        execution = next((e for e in execution_data['data'] if e['_id'] == execution_id), None)
-        return execution
+        return next(
+            (e for e in execution_data['data'] if e['_id'] == execution_id), None
+        )
 
     def get_enabled_success_indicator(self) -> SuccessIndicator:
         """
