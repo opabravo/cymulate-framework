@@ -11,5 +11,8 @@ if __name__ == '__main__':
     # m.run()
 
     # Scheduled Task - Persistance
-    m = WindowsModule("60f43effac529a1c1f25ebdc")
+    if len(sys.argv)>1:
+        m = WindowsModule(sys.argv[1])
+    else:
+        m = WindowsModule("60f43effac529a1c1f25ebdc")
     m.run()
